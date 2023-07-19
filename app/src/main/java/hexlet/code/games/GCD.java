@@ -1,13 +1,13 @@
 package hexlet.code.games;
 
-public class GCD implements Game{
+public class GCD implements Game {
     private static final int UPPER_BOUND = 1000;
-    private static final String gameRule = "Find the greatest common divisor of given numbers.";
+    private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
 
 
     @Override
     public void printGameRule() {
-        System.out.println(gameRule);
+        System.out.println(GAME_RULE);
     }
 
     @Override

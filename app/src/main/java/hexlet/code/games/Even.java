@@ -1,16 +1,12 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
-
-import java.util.Scanner;
-
-public class Even implements Game{
+public class Even implements Game {
     private static final int UPPER_BOUND = 10000;
-    private static final String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     @Override
     public void printGameRule() {
-        System.out.println(gameRule);
+        System.out.println(GAME_RULE);
     }
 
     @Override

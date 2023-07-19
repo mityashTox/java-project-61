@@ -1,12 +1,12 @@
 package hexlet.code.games;
 
-public class Calc implements Game{
+public class Calc implements Game {
     private static final int UPPER_BOUND = 1000;
-    private static final String gameRule = "What is the result of the expression?";
+    private static final String GAME_RULE = "What is the result of the expression?";
 
     @Override
     public void printGameRule() {
-        System.out.println(gameRule);
+        System.out.println(GAME_RULE);
     }
 
     @Override
