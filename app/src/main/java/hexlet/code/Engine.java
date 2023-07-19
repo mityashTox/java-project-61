@@ -10,6 +10,7 @@ public class Engine {
     private static final int CHOICE_CALC = 3;
     private static final int CHOICE_GCD = 4;
     private static final int CHOICE_PROGRESSION = 5;
+    private static final int CHOICE_PRIME = 6;
     private static final int CHOICE_EXIT = 0;
 
     private static void startEngine(Game gameSelect) {
@@ -36,6 +37,9 @@ public class Engine {
                 break;
             case CHOICE_PROGRESSION:
                 startEngine(new Progression());
+                break;
+            case CHOICE_PRIME:
+                startEngine(new Prime());
                 break;
             case CHOICE_EXIT:
                 break;
