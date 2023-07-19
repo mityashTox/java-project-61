@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Game;
+import hexlet.code.games.*;
 
 import java.util.Scanner;
 
@@ -12,6 +9,7 @@ public class Engine {
     private static final int CHOICE_ENUM = 2;
     private static final int CHOICE_CALC = 3;
     private static final int CHOICE_GCD = 4;
+    private static final int CHOICE_PROGRESSION = 5;
     private static final int CHOICE_EXIT = 0;
 
     private static void startEngine(Game gameSelect) {
@@ -35,6 +33,9 @@ public class Engine {
                 break;
             case CHOICE_GCD:
                 startEngine(new GCD());
+                break;
+            case CHOICE_PROGRESSION:
+                startEngine(new Progression());
                 break;
             case CHOICE_EXIT:
                 break;

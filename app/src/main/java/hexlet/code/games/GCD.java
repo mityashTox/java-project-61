@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class GCD implements Game{
     private static final int UPPER_BOUND = 1000;
-    private static final String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String gameRule = "Find the greatest common divisor of given numbers.";
 
 
     @Override
