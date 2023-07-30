@@ -7,6 +7,8 @@ public class Prime implements Game {
     private static final int PRIME_VALUE_5 = 5;
     private static final int PRIME_VALUE_7 = 7;
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String[][] stackQuestion = new  String[3][2];
+
 
     @Override
     public void printGameRule() {
@@ -14,17 +16,23 @@ public class Prime implements Game {
     }
 
     @Override
-    public String askQuestion() {
-        int value = (int) (Math.random() * UPPER_BOUND) + PRIME_VALUE_2;
-        System.out.println("Question: " + value);
-        System.out.print("Your answer: ");
-        if (value == PRIME_VALUE_2 || value == PRIME_VALUE_3 || value == PRIME_VALUE_5 || value == PRIME_VALUE_7) {
-            return "yes";
+    public String[][] askQuestions() {
+        for (int i = 0; i < stackQuestion.length; i++) {
+            int value = (int) (Math.random() * UPPER_BOUND) + PRIME_VALUE_2;
+            String answer;
+            if (value == PRIME_VALUE_2 || value == PRIME_VALUE_3 || value == PRIME_VALUE_5 || value == PRIME_VALUE_7) {
+                answer = "yes";
+            }
+            if (value % PRIME_VALUE_2 != 0 && value % PRIME_VALUE_3 != 0
+                    && value % PRIME_VALUE_5 != 0 && value % PRIME_VALUE_7 != 0) {
+                answer = "yes";
+            }
+            answer = "no";
+            stackQuestion[i][0] = Integer.toString(value);
+            stackQuestion[i][1] = answer;
         }
-        if (value % PRIME_VALUE_2 != 0 && value % PRIME_VALUE_3 != 0
-                && value % PRIME_VALUE_5 != 0 && value % PRIME_VALUE_7 != 0) {
-            return "yes";
-        }
-        return "no";
+        return stackQuestion;
     }
 }
+
+

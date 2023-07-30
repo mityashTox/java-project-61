@@ -1,75 +1,32 @@
 package hexlet.code;
 
 import hexlet.code.games.Game;
-import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Even;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 public class Engine {
-    private static final int CHOICE_GREETINGS = 1;
-    private static final int CHOICE_ENUM = 2;
-    private static final int CHOICE_CALC = 3;
-    private static final int CHOICE_GCD = 4;
-    private static final int CHOICE_PROGRESSION = 5;
-    private static final int CHOICE_PRIME = 6;
-    private static final int CHOICE_EXIT = 0;
 
-    private static void startEngine(Game gameSelect) {
-        Cli.greetingsCli();
-        gameSelect.printGameRule();
-        workingGame(gameSelect);
-    }
-
-    public static void selectGame() {
-        Scanner sc = new Scanner(System.in);
-        int select = sc.nextInt();
-        switch (select) {
-            case CHOICE_GREETINGS:
-                Cli.greetingsCli();
-                break;
-            case CHOICE_ENUM:
-                startEngine(new Even());
-                break;
-            case CHOICE_CALC:
-                startEngine(new Calc());
-                break;
-            case CHOICE_GCD:
-                startEngine(new GCD());
-                break;
-            case CHOICE_PROGRESSION:
-                startEngine(new Progression());
-                break;
-            case CHOICE_PRIME:
-                startEngine(new Prime());
-                break;
-            case CHOICE_EXIT:
-                break;
-            default:
-        }
-    }
-
-    private  static void workingGame(Game game) {
+    public static void workingGame(Game game) {
         Scanner sc = new Scanner(System.in);
         boolean vinTrue = true;
-        boolean sequelTrue = true;
-        int i = 0;
-        while (sequelTrue && i < 3) {
-            String answerTrue = game.askQuestion();
+        String[][] stackQuestion = game.askQuestions();
+
+        Cli.greetingsCli();
+        game.printGameRule();
+
+        for (int i = 0; i < stackQuestion.length; i++) {
+            System.out.println("Question: " + stackQuestion[i][0]);
+            System.out.print("Your answer: ");
             String answer = sc.next();
-            if (answer.equals(answerTrue)) {
+            if (answer.equals(stackQuestion[i][1])) {
                 System.out.println("Correct!");
             } else {
-                sequelTrue = false;
                 vinTrue = false;
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + answerTrue + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + stackQuestion[i][1] + "'.");
+                break;
             }
-            i++;
         }
-        if (sequelTrue) {
+        if (vinTrue) {
             System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
