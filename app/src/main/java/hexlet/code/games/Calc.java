@@ -27,7 +27,8 @@ public final class Calc implements Game {
             if (Math.random() * INCREASE_THE_MANTISSA < ARRAY_SIZE_1) {
                 answer = randomValue1 + randomValue2;
                 expression = "+";
-            } else if (Math.random() * INCREASE_THE_MANTISSA >= SWITCH_PLUS && Math.random() * INCREASE_THE_MANTISSA < SWITCH_MINUS) {
+            } else if (Math.random() * INCREASE_THE_MANTISSA >= SWITCH_PLUS && Math.random()
+                    * INCREASE_THE_MANTISSA < SWITCH_MINUS) {
                 answer = randomValue1 - randomValue2;
                 expression = "-";
             } else {
