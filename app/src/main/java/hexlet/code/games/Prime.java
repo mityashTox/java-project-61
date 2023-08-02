@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.math.BigInteger;
 
-public class Prime implements Game {
+public final class Prime implements Game {
     private static final int UPPER_BOUND = 1000;
     private static final int PRIME_VALUE_2 = 2;
     private static final int PRIME_VALUE_3 = 3;

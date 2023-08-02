@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-public class Progression implements Game {
+public final class Progression implements Game {
     private static final int BOUND_PROGRESSION_LENGTH = 5;
     private static final int BOUND_PROGRESSION_COEFFICIENT = 5;
     private static final int PROGRESSION_LENGTH = 5;

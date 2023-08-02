@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-public class Even implements Game {
+public final class Even implements Game {
     private static final int UPPER_BOUND = 10000;
     private static final String GAME_RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     private static final int ARRAY_SIZE_1 = 3;

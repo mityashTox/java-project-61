@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-public class GCD implements Game {
+public final class GCD implements Game {
     private static final int UPPER_BOUND = 1000;
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
     private static final int ARRAY_SIZE_1 = 3;
