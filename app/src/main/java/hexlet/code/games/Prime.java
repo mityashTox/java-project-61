@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import java.math.BigInteger;
+
 public class Prime implements Game {
     private static final int UPPER_BOUND = 1000;
     private static final int PRIME_VALUE_2 = 2;
@@ -19,14 +21,14 @@ public class Prime implements Game {
     public String[][] askQuestions() {
         for (int i = 0; i < stackQuestion.length; i++) {
             int value = (int) (Math.random() * UPPER_BOUND) + PRIME_VALUE_2;
-            String answer = "no";
-            if (value == PRIME_VALUE_2 || value == PRIME_VALUE_3 || value == PRIME_VALUE_5 || value == PRIME_VALUE_7) {
+            BigInteger bigInteger = BigInteger.valueOf(value);
+            boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(value));
+            String answer;
+            if (probablePrime) {
                 answer = "yes";
-            } if (value % PRIME_VALUE_2 != 0 && value % PRIME_VALUE_3 != 0
-                    && value % PRIME_VALUE_5 != 0 && value % PRIME_VALUE_7 != 0) {
-                answer = "yes";
+            } else {
+                answer = "no";
             }
-
             stackQuestion[i][0] = Integer.toString(value);
             stackQuestion[i][1] = answer;
         }
