@@ -3,7 +3,9 @@ package hexlet.code.games;
 public class GCD implements Game {
     private static final int UPPER_BOUND = 1000;
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
-    private static String[][] stackQuestion = new String[3][2];
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
+    private static String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
 
 
     @Override

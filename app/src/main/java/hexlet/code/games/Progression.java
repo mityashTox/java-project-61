@@ -7,7 +7,9 @@ public class Progression implements Game {
     private static final int BOUND_START_PROGRESSION = 10;
     private static final int PROGRESSION_COEFFICIENT = 10;
     private static final String GAME_RULE = "What number is missing in the progression?";
-    private static String[][] stackQuestion = new  String[3][2];
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
+    private static String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
 
 
 

@@ -9,7 +9,9 @@ public class Prime implements Game {
     private static final int PRIME_VALUE_5 = 5;
     private static final int PRIME_VALUE_7 = 7;
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String[][] stackQuestion = new  String[3][2];
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
+    private static String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
 
 
     @Override

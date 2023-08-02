@@ -4,7 +4,9 @@ package hexlet.code.games;
 public class Calc implements Game {
     private static final int UPPER_BOUND = 1000;
     private static final String GAME_RULE = "What is the result of the expression?";
-    private static String[][] stackQuestion = new  String[3][2];
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
+    private static String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
 
     @Override
     public void printGameRule() {
