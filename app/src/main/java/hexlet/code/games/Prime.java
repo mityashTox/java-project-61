@@ -22,12 +22,13 @@ public class Prime implements Game {
             String answer;
             if (value == PRIME_VALUE_2 || value == PRIME_VALUE_3 || value == PRIME_VALUE_5 || value == PRIME_VALUE_7) {
                 answer = "yes";
-            }
-            if (value % PRIME_VALUE_2 != 0 && value % PRIME_VALUE_3 != 0
+            } if (value % PRIME_VALUE_2 != 0 && value % PRIME_VALUE_3 != 0
                     && value % PRIME_VALUE_5 != 0 && value % PRIME_VALUE_7 != 0) {
                 answer = "yes";
+            } else {
+                answer = "no";
             }
-            answer = "no";
+
             stackQuestion[i][0] = Integer.toString(value);
             stackQuestion[i][1] = answer;
         }
