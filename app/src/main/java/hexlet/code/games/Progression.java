@@ -21,7 +21,8 @@ public class Progression implements Game {
         for (int i = 0; i < stackQuestion.length; i++) {
             int progressionLength = (int) (Math.random() * BOUND_PROGRESSION_LENGTH) + PROGRESSION_LENGTH;
             int hiddenPosition = (int) (Math.random() * progressionLength);
-            int progressionCoefficient = (int) (Math.random() * BOUND_PROGRESSION_COEFFICIENT) + PROGRESSION_COEFFICIENT;
+            int progressionCoefficient = (int) (Math.random() * BOUND_PROGRESSION_COEFFICIENT)
+                    + PROGRESSION_COEFFICIENT;
             int startProgressionValue = (int) (Math.random() * BOUND_START_PROGRESSION);
             String answer = null;
             StringBuilder stringBuilder = new StringBuilder();

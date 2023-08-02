@@ -13,7 +13,7 @@ public class Calc implements Game {
 
     @Override
     public String[][] askQuestions() {
-        for (int i = 0; i < stackQuestion.length; i++){
+        for (int i = 0; i < stackQuestion.length; i++) {
             int randomValue1 = (int) (Math.random() * UPPER_BOUND);
             int randomValue2 = (int) (Math.random() * UPPER_BOUND);
             int answer;

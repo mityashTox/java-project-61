@@ -22,7 +22,8 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 vinTrue = false;
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + stackQuestion[i][1] + "'.\n"
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + stackQuestion[i][1] + "'.\n"
                 + "Let's try again, " + Cli.getName() + "!");
                 break;
             }
