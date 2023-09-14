@@ -36,19 +36,19 @@ public class App {
                 Cli.greetingsCli();
                 break;
             case CHOICE_EVEN:
-                Engine.workingGame(new Even());
+                new Even().startGame();
                 break;
             case CHOICE_CALC:
-                Engine.workingGame(new Calc());
+                new Calc().startGame();
                 break;
             case CHOICE_GCD:
-                Engine.workingGame(new GCD());
+                new GCD().startGame();
                 break;
             case CHOICE_PROGRESSION:
-                Engine.workingGame(new Progression());
+                new Progression().startGame();
                 break;
             case CHOICE_PRIME:
-                Engine.workingGame(new Prime());
+                new Prime().startGame();
                 break;
             case CHOICE_EXIT:
                 break;
