@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Progression implements Game {
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
     private static final int BOUND_PROGRESSION_LENGTH = 5;
     private static final int BOUND_PROGRESSION_COEFFICIENT = 5;
     private static final int PROGRESSION_LENGTH = 5;
@@ -22,8 +24,6 @@ public final class Progression implements Game {
 
     @Override
     public String[][] askQuestions() {
-        int ARRAY_SIZE_1 = 3;
-        int ARRAY_SIZE_2 = 2;
         String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
             int progressionLength = (int) (Math.random() * BOUND_PROGRESSION_LENGTH) + PROGRESSION_LENGTH;

@@ -2,9 +2,11 @@ package hexlet.code.games;
 
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class Calc implements Game {
-    private static final int UPPER_BOUND = 1000;
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
     private static final String GAME_RULE = "What is the result of the expression?";
     private static final int SWITCH_PLUS = 2;
     private static final int SWITCH_MINUS = 6;
@@ -23,12 +25,10 @@ public final class Calc implements Game {
 
     @Override
     public String[][] askQuestions() {
-        int ARRAY_SIZE_1 = 3;
-        int ARRAY_SIZE_2 = 2;
         String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
-            int randomValue1 = (int) (Math.random() * UPPER_BOUND);
-            int randomValue2 = (int) (Math.random() * UPPER_BOUND);
+            int randomValue1 = Utils.makeRandomValue();
+            int randomValue2 = Utils.makeRandomValue();
             int answer;
             String expression;
             if (Math.random() * INCREASE_THE_MANTISSA < 3) {

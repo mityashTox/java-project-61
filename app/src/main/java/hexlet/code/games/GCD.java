@@ -1,9 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public final class GCD implements Game {
-    private static final int UPPER_BOUND = 1000;
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
     private static final String GAME_RULE = "Find the greatest common divisor of given numbers.";
 
     @Override
@@ -18,12 +20,10 @@ public final class GCD implements Game {
 
     @Override
     public String[][] askQuestions() {
-        int ARRAY_SIZE_1 = 3;
-        int ARRAY_SIZE_2 = 2;
         String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
-            int randomValue1 = (int) (Math.random() * UPPER_BOUND);
-            int randomValue2 = (int) (Math.random() * UPPER_BOUND);
+            int randomValue1 = Utils.makeRandomValue();
+            int randomValue2 = Utils.makeRandomValue();
             int max = Math.max(randomValue1, randomValue2);
             int min = Math.min(randomValue1, randomValue2);
             int divisor = 0;

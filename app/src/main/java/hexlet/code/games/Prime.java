@@ -1,11 +1,13 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.math.BigInteger;
 
 public final class Prime implements Game {
-    private static final int UPPER_BOUND = 1000;
+    private static final int ARRAY_SIZE_1 = 3;
+    private static final int ARRAY_SIZE_2 = 2;
     private static final int PRIME_VALUE_2 = 2;
     private static final String GAME_RULE = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
@@ -21,11 +23,9 @@ public final class Prime implements Game {
 
     @Override
     public String[][] askQuestions() {
-        int ARRAY_SIZE_1 = 3;
-        int ARRAY_SIZE_2 = 2;
         String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
-            int value = (int) (Math.random() * UPPER_BOUND) + PRIME_VALUE_2;
+            int value = Utils.makeRandomValue() + PRIME_VALUE_2;
             BigInteger bigInteger = BigInteger.valueOf(value);
             boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(value));
             String answer;
