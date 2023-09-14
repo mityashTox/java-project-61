@@ -21,7 +21,9 @@ public final class Prime implements Game {
 
     @Override
     public String[][] askQuestions() {
-        String[][] stackQuestion = new  String[3][2];
+        int ARRAY_SIZE_1 = 3;
+        int ARRAY_SIZE_2 = 2;
+        String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
             int value = (int) (Math.random() * UPPER_BOUND) + PRIME_VALUE_2;
             BigInteger bigInteger = BigInteger.valueOf(value);

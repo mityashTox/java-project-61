@@ -18,7 +18,9 @@ public final class GCD implements Game {
 
     @Override
     public String[][] askQuestions() {
-        String[][] stackQuestion = new  String[3][2];
+        int ARRAY_SIZE_1 = 3;
+        int ARRAY_SIZE_2 = 2;
+        String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
         for (int i = 0; i < stackQuestion.length; i++) {
             int randomValue1 = (int) (Math.random() * UPPER_BOUND);
             int randomValue2 = (int) (Math.random() * UPPER_BOUND);
