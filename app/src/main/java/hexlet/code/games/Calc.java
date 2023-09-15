@@ -12,8 +12,6 @@ public final class Calc implements Game {
     private static final int SWITCH_MINUS = 2;
     private static final int SWITCH_MULTIPLICATION = 3;
     private static final int NON_RESULT = 0;
-    private static final int INCREASE_THE_MANTISSA = 10;
-
 
     @Override
     public void printGameRule() {
@@ -33,17 +31,6 @@ public final class Calc implements Game {
             int randomValue2 = Utils.makeRandomValue();
             char expression = makeSign();
             int answer = calculate(expression, randomValue1, randomValue2);
-//            if (Math.random() * INCREASE_THE_MANTISSA < ARRAY_SIZE_1) {
-//                answer = randomValue1 + randomValue2;
-//                expression = "+";
-//            } else if (Math.random() * INCREASE_THE_MANTISSA >= SWITCH_PLUS && Math.random()
-//                    * INCREASE_THE_MANTISSA < SWITCH_MINUS) {
-//                answer = randomValue1 - randomValue2;
-//                expression = "-";
-//            } else {
-//                answer = randomValue1 * randomValue2;
-//                expression = "*";
-//            }
             stackQuestion[i][0] = randomValue1 + " " + expression + " " + randomValue2;
             stackQuestion[i][1] = Integer.toString(answer);
         }

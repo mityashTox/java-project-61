@@ -26,19 +26,22 @@ public final class GCD implements Game {
             int randomValue2 = Utils.makeRandomValue();
             int max = Math.max(randomValue1, randomValue2);
             int min = Math.min(randomValue1, randomValue2);
-            int divisor = 0;
-
-            while (min != 0) {
-                divisor = min;
-                min = max % min;
-                max = divisor;
-            }
             stackQuestion[i][0] = randomValue1 + " " + randomValue2;
-            stackQuestion[i][1] = Integer.toString(divisor);
+            stackQuestion[i][1] = Integer.toString(gcd(max, min));
         }
-
         return stackQuestion;
     }
-}
+
+    private static int gcd(int a, int b) {
+        int divisor = 0;
+        while (b != 0) {
+            divisor = b;
+            b = a % b;
+            a = divisor;
+        }
+        return divisor;
+    }
+
+    }
 
 
