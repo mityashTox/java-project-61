@@ -28,12 +28,7 @@ public final class Prime implements Game {
             int value = Utils.makeRandomValue() + PRIME_VALUE_2;
             BigInteger bigInteger = BigInteger.valueOf(value);
             boolean probablePrime = bigInteger.isProbablePrime((int) Math.log(value));
-            String answer;
-            if (probablePrime) {
-                answer = "yes";
-            } else {
-                answer = "no";
-            }
+            String answer = probablePrime ? "yes" : "no";
             stackQuestion[i][0] = Integer.toString(value);
             stackQuestion[i][1] = answer;
         }
