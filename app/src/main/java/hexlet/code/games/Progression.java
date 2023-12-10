@@ -25,29 +25,28 @@ public final class Progression implements Game {
     @Override
     public String[][] askQuestions() {
         String[][] stackQuestion = new  String[ARRAY_SIZE_1][ARRAY_SIZE_2];
-        for (int i = 0; i < stackQuestion.length; i++) {
-            int progressionLength = (int) (Math.random() * BOUND_PROGRESSION_LENGTH) + PROGRESSION_LENGTH;
-            int hiddenPosition = (int) (Math.random() * progressionLength);
-            int progressionCoefficient = (int) (Math.random() * BOUND_PROGRESSION_COEFFICIENT)
-                    + PROGRESSION_COEFFICIENT;
-            int startProgressionValue = (int) (Math.random() * BOUND_START_PROGRESSION);
-            String answer = null;
-            StringBuilder stringBuilder = new StringBuilder();
 
-            for (int j = 0; j < progressionLength; j++) {
-                if (j == hiddenPosition) {
-                    stringBuilder.append(".. ");
-                    answer = Integer.toString(startProgressionValue);
-                } else {
-                    stringBuilder.append(startProgressionValue).append(" ");
-                }
-                startProgressionValue += progressionCoefficient;
-            }
-            stackQuestion[i][0] = stringBuilder.toString();
-            stackQuestion[i][1] = answer;
+        for (int i = 0; i < stackQuestion.length; i++) {
+           String[] progression = createProgression();
+           int hiddenPosition = (int) (Math.random() * progression.length);
+           stackQuestion[i][1] = progression[hiddenPosition];
+           progression[hiddenPosition] = "..";
+           stackQuestion[i][0] = String.join(" ", progression);
         }
         return stackQuestion;
     }
 
+    private static String[] createProgression () {
+        int progressionLength = (int) (Math.random() * BOUND_PROGRESSION_LENGTH) + PROGRESSION_LENGTH;
+        int progressionCoefficient = (int) (Math.random() * BOUND_PROGRESSION_COEFFICIENT)
+                + PROGRESSION_COEFFICIENT;
+        int startProgressionValue = (int) (Math.random() * BOUND_START_PROGRESSION);
+        String[] stackQuestion = new  String[progressionLength];
+        stackQuestion[0] = String.valueOf(startProgressionValue);
 
+        for (int i = 1; i < stackQuestion.length; i++) {
+            stackQuestion[i] = String.valueOf(startProgressionValue + progressionCoefficient * i);
+        }
+        return stackQuestion;
+    }
 }
