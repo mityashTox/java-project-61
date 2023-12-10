@@ -27,7 +27,7 @@ public final class Calc implements Game {
         for (int i = 0; i < stackQuestion.length; i++) {
             int randomValue1 = Utils.makeRandomValue();
             int randomValue2 = Utils.makeRandomValue();
-            int expression = (int)Math.floor(Math.random() * operators.length);
+            int expression = (int) Math.floor(Math.random() * operators.length);
             int answer = calculate(operators[expression], randomValue1, randomValue2);
             stackQuestion[i][0] = randomValue1 + " " + operators[expression] + " " + randomValue2;
             stackQuestion[i][1] = Integer.toString(answer);

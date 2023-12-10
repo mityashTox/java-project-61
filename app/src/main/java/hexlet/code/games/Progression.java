@@ -36,7 +36,7 @@ public final class Progression implements Game {
         return stackQuestion;
     }
 
-    private static String[] createProgression () {
+    private static String[] createProgression() {
         int progressionLength = (int) (Math.random() * BOUND_PROGRESSION_LENGTH) + PROGRESSION_LENGTH;
         int progressionCoefficient = (int) (Math.random() * BOUND_PROGRESSION_COEFFICIENT)
                 + PROGRESSION_COEFFICIENT;
